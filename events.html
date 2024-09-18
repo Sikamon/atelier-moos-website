@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Simon Kaiser">
+    <meta name="description" content="This website shows details about the artist Simon Kaiser and his works">
+    <meta name="keywords" content="Artist, Gallery, Fine Art Prints, Originals, Artshop">
+    <meta name="revisit-after" content="5 days">
+    <meta name="robots" content="index, follow">
+    <title>Contemporary Abstract Artist | Simon Kaiser</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header-main">
+        <div class="header-main-logo">
+            <a href="index.html">
+                <img src="img/logo.svg" alt="atelier moos logo">
+            </a>
+        </div>
+        <nav class="header-main-nav">
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="artists.html">Artists</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="events-hero">
+            <h1>Upcoming Events</h1>
+        </section>
+
+        <section class="events-list">
+            <div class="event">
+                <img src="https://via.placeholder.com/400x300" alt="Event 1">
+                <div class="event-info">
+                    <h2>Exhibition Opening: Abstract Visions</h2>
+                    <p class="date">May 15, 2024 | 7:00 PM - 10:00 PM</p>
+                    <p>Join us for the opening night of our new exhibition featuring works from emerging abstract artists.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+            <div class="event">
+                <img src="https://via.placeholder.com/400x300" alt="Event 2">
+                <div class="event-info">
+                    <h2>Artist Talk: Jane Doe</h2>
+                    <p class="date">June 2, 2024 | 3:00 PM - 4:30 PM</p>
+                    <p>Renowned artist Jane Doe discusses her creative process and latest works.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+            <div class="event">
+                <img src="https://via.placeholder.com/400x300" alt="Event 3">
+                <div class="event-info">
+                    <h2>Workshop: Introduction to Abstract Painting</h2>
+                    <p class="date">June 15, 2024 | 10:00 AM - 2:00 PM</p>
+                    <p>Learn the basics of abstract painting in this hands-on workshop led by local artist John Smith.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="footer-main">
+        <div class="footer-main-content">
+            <p>&copy; 2024 Atelier Moos. All rights reserved.</p>
+            <p><a href="imprint.html">Imprint</a> | <a href="privacy.html">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let lastScrollTop = 0;
+            const header = document.querySelector(".header-main");
+            const scrollThreshold = 100;
+            let ticking = false;
+
+            function handleScroll() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+                    header.classList.add("hidden");
+                } else if (scrollTop < lastScrollTop) {
+                    header.classList.remove("hidden");
+                }
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+                ticking = false;
+            }
+
+            window.addEventListener("scroll", function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(handleScroll);
+                    ticking = true;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

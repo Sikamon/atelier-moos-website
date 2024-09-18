@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Simon Kaiser">
+    <meta name="description" content="This website shows details about the artist Simon Kaiser and his works">
+    <meta name="keywords" content="Artist, Gallery, Fine Art Prints, Originals, Artshop">
+    <meta name="revisit-after" content="5 days">
+    <meta name="robots" content="index, follow">
+    <title>Contemporary Abstract Artist | Simon Kaiser</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header-main">
+        <div class="header-main-logo">
+            <a href="index.html">
+                <img src="img/logo.svg" alt="atelier moos logo">
+            </a>
+        </div>
+        <nav class="header-main-nav">
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="artists.html">Artists</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="imprint-content">
+        <h1>Imprint</h1>
+
+        <section>
+            <h2>Information according to § 5 TMG</h2>
+            <p>Atelier Moos<br>
+            Glockengasse 6/10-12<br>
+            1020, Vienna<br>
+            </p>
+        </section>
+
+        <section>
+            <h2>Contact</h2>
+            <p>Phone: +436706535770<br>
+            E-Mail: info@ateliermoos.art</p>
+        </section>
+
+        <section>
+            <h2>Represented by</h2>
+            <p>The Board: Yulia, Lisa and Simon</p>
+        </section>
+
+        <section>
+            <h2>EU dispute resolution</h2>
+            <p>The European Commission provides a platform for online dispute resolution (OS): <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr/</a>.<br>
+            You can find our e-mail address in the imprint above.</p>
+        </section>
+
+        <section>
+            <h2>Consumer dispute resolution/universal dispute resolution body</h2>
+            <p>We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.</p>
+        </section>
+
+        <section>
+            <h2>Liability for Contents</h2>
+            <p>As service providers, we are liable for own contents of these websites according to Sec. 7, paragraph 1 German Telemedia Act (TMG). However, according to Sec. 8 to 10 German Telemedia Act (TMG), service providers are not obligated to permanently monitor submitted or stored information or to search for evidences that indicate illegal activities.</p>
+            <p>Legal obligations to removing information or to blocking the use of information remain unchallenged. In this case, liability is only possible at the time of knowledge about a specific violation of law. Illegal contents will be removed immediately at the time we get knowledge of them.</p>
+        </section>
+
+        <section>
+            <h2>Liability for Links</h2>
+            <p>Our offer includes links to external third party websites. We have no influence on the contents of those websites, therefore we cannot guarantee for those contents. Providers or administrators of linked websites are always responsible for their own contents.</p>
+            <p>The linked websites had been checked for possible violations of law at the time of the establishment of the link. Illegal contents were not detected at the time of the linking. A permanent monitoring of the contents of linked websites cannot be imposed without reasonable indications that there has been a violation of law. Illegal links will be removed immediately at the time we get knowledge of them.</p>
+        </section>
+
+        <section>
+            <h2>Copyright</h2>
+            <p>Contents and compilations published on these websites by the providers are subject to German copyright laws. Reproduction, editing, distribution as well as the use of any kind outside the scope of the copyright law require a written permission of the author or originator. Downloads and copies of these websites are permitted for private use only. The commercial use of our contents without permission of the originator is prohibited.</p>
+            <p>Copyright laws of third parties are respected as long as the contents on these websites do not originate from the provider. Contributions of third parties on this site are indicated as such. However, if you notice any violations of copyright law, please inform us. Such contents will be removed immediately.</p>
+        </section>
+    </main>
+
+    <footer class="footer-main">
+        <div class="footer-main-content">
+            <p>&copy; 2024 Atelier Moos. All rights reserved.</p>
+            <p><a href="imprint.html">Imprint</a> | <a href="privacy.html">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let lastScrollTop = 0;
+            const header = document.querySelector(".header-main");
+            const scrollThreshold = 100;
+            let ticking = false;
+
+            function handleScroll() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+                    header.classList.add("hidden");
+                } else if (scrollTop < lastScrollTop) {
+                    header.classList.remove("hidden");
+                }
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+                ticking = false;
+            }
+
+            window.addEventListener("scroll", function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(handleScroll);
+                    ticking = true;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
