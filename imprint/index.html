@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Atelier Moos">
+    <meta name="description" content="This website shows details about Atelier Moos">
+    <meta name="keywords" content="Artists, Gallery, Originals, Artshop, Atelier Moos, Artstudio">
+    <meta name="revisit-after" content="5 days">
+    <meta name="robots" content="index, follow">
+    <title>Atelier Moos | Association For Creative Freedom </title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/hero.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="header-main"></div>
+
+    <section class="imprint-hero">
+        <h1>Imprint</h1>
+    </section>
+
+    <main class="imprint-content">
+        <section>
+            <h3>Information according to § 5 TMG</h3>
+            <p>Atelier Moos<br>
+            Glockengasse 6/10-12<br>
+            1020, Vienna<br>
+            </p>
+        </section>
+
+        <section>
+            <h3>Contact</h3>
+            <p>Phone: +436706535770<br>
+            E-Mail: info@ateliermoos.art</p>
+        </section>
+
+        <section>
+            <h3>Represented by</h3>
+            <p>The Board: Yulia, Lisa and Simon</p>
+        </section>
+
+        <section>
+            <h3>EU dispute resolution</h3>
+            <p>The European Commission provides a platform for online dispute resolution (OS): <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr/</a>.<br>
+            You can find our e-mail address in the imprint above.</p>
+        </section>
+
+        <section>
+            <h3>Consumer dispute resolution/universal dispute resolution body</h3>
+            <p>We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.</p>
+        </section>
+
+        <section>
+            <h3>Liability for Contents</h3>
+            <p>As service providers, we are liable for own contents of these websites according to Sec. 7, paragraph 1 German Telemedia Act (TMG). However, according to Sec. 8 to 10 German Telemedia Act (TMG), service providers are not obligated to permanently monitor submitted or stored information or to search for evidences that indicate illegal activities.</p>
+            <p>Legal obligations to removing information or to blocking the use of information remain unchallenged. In this case, liability is only possible at the time of knowledge about a specific violation of law. Illegal contents will be removed immediately at the time we get knowledge of them.</p>
+        </section>
+
+        <section>
+            <h3>Liability for Links</h3>
+            <p>Our offer includes links to external third party websites. We have no influence on the contents of those websites, therefore we cannot guarantee for those contents. Providers or administrators of linked websites are always responsible for their own contents.</p>
+            <p>The linked websites had been checked for possible violations of law at the time of the establishment of the link. Illegal contents were not detected at the time of the linking. A permanent monitoring of the contents of linked websites cannot be imposed without reasonable indications that there has been a violation of law. Illegal links will be removed immediately at the time we get knowledge of them.</p>
+        </section>
+
+        <section>
+            <h3>Copyright</h3>
+            <p>Contents and compilations published on these websites by the providers are subject to German copyright laws. Reproduction, editing, distribution as well as the use of any kind outside the scope of the copyright law require a written permission of the author or originator. Downloads and copies of these websites are permitted for private use only. The commercial use of our contents without permission of the originator is prohibited.</p>
+            <p>Copyright laws of third parties are respected as long as the contents on these websites do not originate from the provider. Contributions of third parties on this site are indicated as such. However, if you notice any violations of copyright law, please inform us. Such contents will be removed immediately.</p>
+        </section>
+    </main>
+
+    <div id="footer-main"></div>
+
+        <!-- Header and Footer Loader Script -->
+        <script>
+            function loadHTML(id, file, callback) {
+                fetch(file)
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById(id).innerHTML = data;
+                        if (callback) callback();
+                    });
+            }
+    
+            loadHTML("header-main", "/header-footer/header-main", function() {
+                const header = document.querySelector(".header-main");
+                let lastScrollTop = 0;
+                window.addEventListener("scroll", function() {
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    if (scrollTop > lastScrollTop && scrollTop > 100) {
+                        header.classList.add("hidden");
+                    } else if (scrollTop < lastScrollTop) {
+                        header.classList.remove("hidden");
+                    }
+                    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+                });
+    
+                const menuToggle = document.querySelector('.menu-toggle');
+                const navMenu = document.querySelector('.header-main-nav');
+                menuToggle.addEventListener('click', function () {
+                    navMenu.classList.toggle('show');
+                });
+            });
+    
+            loadHTML("footer-main", "/header-footer/footer-main");
+        </script>
+        
+</body>
+</html>

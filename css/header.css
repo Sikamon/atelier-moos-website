@@ -1,0 +1,213 @@
+/* Base header styles for all devices */
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border-bottom: 1px solid #cccccc;
+    height: 80px;
+    padding: 0 20vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    transition: transform 0.3s ease-in-out;
+}
+
+.header-main.hidden {
+    transform: translateY(-100%);
+}
+
+.header-main-logo {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    /* Prevents the logo from shrinking */
+    flex-shrink: 0;
+    padding: 4px 0 0 0;
+}
+
+.header-main-logo img {
+    height: 50px;
+    cursor: pointer;
+}
+
+.header-main-logo-hover {
+    transition: transform 0.3s ease;
+}
+
+/* Change to black version on hover */
+.header-main-logo-hover:hover img {
+    content: url('/img/logo-black.svg');
+}
+
+/* Centered and fixed navigation */
+.header-main-nav {
+    background-color: #ffffff;
+    margin: 0 auto;
+    /* Centers the navigation menu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    /* Ensures it occupies the center space */
+}
+
+.header-main-nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header-main-nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+/* Nav links font size */
+.header-main-nav ul li a {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+    line-height: 79px;
+    transition: color 0.3s ease;
+    /* Space for underline */
+    padding-bottom: 2px;
+    position: relative;
+}
+
+/* Different colors for each navigation link */
+.header-main-nav ul li:nth-child(1) a {
+    color: #DC4A3B;
+}
+
+.header-main-nav ul li:nth-child(2) a {
+    color: #397F3C;
+}
+
+.header-main-nav ul li:nth-child(3) a {
+    color: #3882C4;
+}
+
+.header-main-nav ul li:nth-child(4) a {
+    color: #E08223;
+}
+
+/* Add underline and color change on hover */
+.header-main-nav ul li a:hover {
+    color: #000000;
+}
+
+.header-main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000000;
+    transition: width 0.3s ease;
+}
+
+.header-main-nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Menu toggle visibility for Browser*/
+.menu-toggle {
+    display: none;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.header-main-social {
+    align-items: center;
+    background-color: #ffffff;
+    display: flex;
+    /* Prevents the social icons from shrinking */
+    flex-shrink: 0;
+    padding: 8px 0 0 0;
+}
+
+.header-main-social a {
+    display: inline-block;
+    padding: 5px;
+}
+
+.header-main-social img {
+    cursor: pointer;
+    height: 25px;
+    transition: transform 0.3s ease;
+}
+
+.header-main-social-hover:hover img {
+    /* Slightly larger on hover */
+    transform: scale(0.9);
+}
+
+/* Tablet and Mobile view (<1000px) */
+@media (max-width: 1000px) {
+
+    .menu-toggle {
+        align-items: center;
+        background-color: #ffffff;
+        cursor: pointer;
+        display: flex;
+        font-size: 30px;
+        justify-content: center;
+        margin: 0 auto;
+        transition: transform 0.3s ease;
+        width: 100%;
+    }
+
+    .menu-toggle-hover:hover {
+        transform: scale(0.9);
+    }
+
+    .header-main-nav ul {
+        background-color: #ffffff;
+        border-top: 1px solid #cccccc;
+        display: none;
+        flex-direction: column;
+        left: 0;
+        position: absolute;
+        top: 79px;
+        width: 100%;
+    }
+
+    /* Show the navigation on menu toggle */
+    .header-main-nav.show ul {
+        display: flex;
+    }
+
+    /* Ensure everything fits nicely in smaller screens */
+    .header-main-nav ul li {
+        border-bottom: 1px solid #cccccc;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+}
+
+/* Tablet view (1000px - 750px) */
+@media (max-width: 1000px) and (min-width: 750px) {
+    .header-main {
+        padding: 0 10vw;
+    }
+
+}
+
+/* Mobile view (<750px) */
+@media (max-width: 750px) {
+    .header-main {
+        padding: 0 5vw;
+    }
+}

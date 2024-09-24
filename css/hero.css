@@ -1,0 +1,76 @@
+.about-hero {
+    align-items: center;
+    background-size: cover;
+    background-color: #DC4A3B;
+    background-position: center;
+    color: #ffffff;
+    display: flex;
+    height: 110px;
+    justify-content: center;
+}
+
+.artists-hero {
+    align-items: center;
+    background-size: cover;
+    background-color: #397F3C;
+    background-position: center;
+    color: #ffffff;
+    display: flex;
+    height: 110px;
+    justify-content: center;
+}
+
+.contact-hero {
+    align-items: center;
+    background-size: cover;
+    background-color: #E08223;
+    background-position: center;
+    color: #ffffff;
+    display: flex;
+    height: 110px;
+    justify-content: center;
+}
+
+.events-hero {
+    align-items: center;
+    background-size: cover;
+    background-color: #3882C4;
+    background-position: center;
+    color: #ffffff;
+    display: flex;
+    height: 110px;
+    justify-content: center;
+}
+
+.index-hero {
+    align-items: center;
+    background-size: cover;
+    background-color: #cccccc;
+    background-position: center;
+    color: #ffffff;
+    display: flex;
+    height: 110px;
+    justify-content: center;
+}
+
+.imprint-hero {
+    align-items: center;
+    background-size: cover;
+    background-color: #cccccc;
+    background-position: center;
+    color: #ffffff;
+    display: flex;
+    height: 110px;
+    justify-content: center;
+}
+
+.privacy-hero {
+    align-items: center;
+    background-size: cover;
+    background-color: #cccccc;
+    background-position: center;
+    color: #ffffff;
+    display: flex;
+    height: 110px;
+    justify-content: center;
+}

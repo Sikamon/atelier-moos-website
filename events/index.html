@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Atelier Moos">
+    <meta name="description" content="This website shows details about Atelier Moos">
+    <meta name="keywords" content="Artists, Gallery, Originals, Artshop, Atelier Moos, Artstudio">
+    <meta name="revisit-after" content="5 days">
+    <meta name="robots" content="index, follow">
+    <title>Atelier Moos | Association For Creative Freedom </title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/hero.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"></head>
+<body>
+
+    <div id="header-main"></div>
+
+    <section class="events-hero">
+        <h1>Upcoming Events</h1>
+    </section>
+
+    <main>
+
+
+        <section class="events-list">
+            <div class="event">
+                <img src="https://via.placeholder.com/400x300" alt="Event 1" loading="lazy">
+                <div class="event-info">
+                    <h2>Exhibition Opening: Abstract Visions</h2>
+                    <p class="date">May 15, 2024 | 7:00 PM - 10:00 PM</p>
+                    <p>Join us for the opening night of our new exhibition featuring works from emerging abstract artists.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+            <div class="event">
+                <img src="https://via.placeholder.com/400x300" alt="Event 2" loading="lazy">
+                <div class="event-info">
+                    <h2>Artist Talk: Jane Doe</h2>
+                    <p class="date">June 2, 2024 | 3:00 PM - 4:30 PM</p>
+                    <p>Renowned artist Jane Doe discusses her creative process and latest works.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+            <div class="event">
+                <img src="https://via.placeholder.com/400x300" alt="Event 3" loading="lazy">
+                <div class="event-info">
+                    <h2>Workshop: Introduction to Abstract Painting</h2>
+                    <p class="date">June 15, 2024 | 10:00 AM - 2:00 PM</p>
+                    <p>Learn the basics of abstract painting in this hands-on workshop led by local artist John Smith.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-main"></div>
+    
+    <!-- Header and Footer Loader Script -->
+    <script>
+        function loadHTML(id, file, callback) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(id).innerHTML = data;
+                    if (callback) callback();
+                });
+        }
+
+        loadHTML("header-main", "/header-footer/header-main", function() {
+            const header = document.querySelector(".header-main");
+            let lastScrollTop = 0;
+            window.addEventListener("scroll", function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    header.classList.add("hidden");
+                } else if (scrollTop < lastScrollTop) {
+                    header.classList.remove("hidden");
+                }
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            });
+
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.header-main-nav');
+            menuToggle.addEventListener('click', function () {
+                navMenu.classList.toggle('show');
+            });
+        });
+
+        loadHTML("footer-main", "/header-footer/footer-main");
+    </script>
+    
+</body>
+</html>

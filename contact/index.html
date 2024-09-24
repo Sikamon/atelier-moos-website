@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Atelier Moos">
+    <meta name="description" content="This website shows details about Atelier Moos">
+    <meta name="keywords" content="Artists, Gallery, Originals, Artshop, Atelier Moos, Artstudio">
+    <meta name="revisit-after" content="5 days">
+    <meta name="robots" content="index, follow">
+    <title>Atelier Moos | Association For Creative Freedom </title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/hero.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"></head>
+<body>
+
+    <div id="header-main"></div>
+
+    <section class="contact-hero">
+        <h1>Contact Us</h1>
+    </section>
+
+    <main>
+        <section class="contact-content">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p>We'd love to hear from you. Feel free to reach out with any questions or inquiries.</p>
+                <ul>
+                    <li>Email: info@ateliermoos.art</li>
+                    <li>Address: Glockengasse 6/10-12, 1020 Vienna, Austria</li>
+                </ul>
+            </div>
+            <div class="contact-form">
+                <h2>Send us a Message</h2>
+                <form>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-main"></div>
+
+    <!-- Header and Footer Loader Script -->
+    <script>
+        function loadHTML(id, file, callback) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(id).innerHTML = data;
+                    if (callback) callback();
+                });
+        }
+
+        loadHTML("header-main", "/header-footer/header-main", function() {
+            const header = document.querySelector(".header-main");
+            let lastScrollTop = 0;
+            window.addEventListener("scroll", function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    header.classList.add("hidden");
+                } else if (scrollTop < lastScrollTop) {
+                    header.classList.remove("hidden");
+                }
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            });
+
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.header-main-nav');
+            menuToggle.addEventListener('click', function () {
+                navMenu.classList.toggle('show');
+            });
+        });
+
+        loadHTML("footer-main", "/header-footer/footer-main");
+    </script>
+    
+</body>
+</html>
