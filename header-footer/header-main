@@ -1,0 +1,24 @@
+<header class="header-main">
+        <div class="header-main-logo header-main-logo-hover">
+            <a href="/index.html">
+              <img src="/img/logo.svg" alt="atelier moos logo" loading="lazy">
+            </a>
+          </div>
+    </div>
+    <nav class="header-main-nav">
+        <ul>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/artists.html">Artists</a></li>
+            <li><a href="/events.html">Events</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <button class="menu-toggle menu-toggle-hover" aria-label="Toggle navigation">
+        &#9776;
+    </button>
+    <div class="header-main-social header-main-social-hover">
+        <a href="https://www.instagram.com/moos.atelier/" target="_blank">
+          <img src="/img/logo-instagram.svg" alt="instagram logo" loading="lazy">
+        </a>
+      </div>
+</header>
