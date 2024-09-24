@@ -1,16 +1,16 @@
 <header class="header-main">
         <div class="header-main-logo header-main-logo-hover">
-            <a href="/index.html">
+            <a href="/">
               <img src="/img/logo.svg" alt="atelier moos logo" loading="lazy">
             </a>
           </div>
     </div>
     <nav class="header-main-nav">
         <ul>
-            <li><a href="/about/index.html">About</a></li>
-            <li><a href="/artists/index.html">Artists</a></li>
-            <li><a href="/events/index.html">Events</a></li>
-            <li><a href="/contact/index.html">Contact</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/artists">Artists</a></li>
+            <li><a href="/events">Events</a></li>
+            <li><a href="/contact">Contact</a></li>
         </ul>
     </nav>
     <button class="menu-toggle menu-toggle-hover" aria-label="Toggle navigation">
